@@ -12,11 +12,11 @@ const Search = ({filteredData, searchQuery, selectedCategory, selectedCountry, p
     
     useEffect(()=>{
         setLoading(true);
-        getFiltered(searchQuery, selectedCategory, selectedCountry, pageNum)
-            .then((res)=>{
-                setResult(res)
-                setLoading(false)
-        }).catch((e)=>{
+            getFiltered(searchQuery, selectedCategory, selectedCountry, pageNum)
+                .then((res)=>{
+                    setResult(res)
+                    setLoading(false)
+            }).catch((e)=>{
             console.log(e)
         })
 
@@ -24,14 +24,18 @@ const Search = ({filteredData, searchQuery, selectedCategory, selectedCountry, p
 
     const getMoreArticles= async()=>{
         await setPageNum(pageNum+1);
+        if(pageNum<=7){
         getFiltered(searchQuery, selectedCategory, selectedCountry, pageNum)
             .then((res)=>{
                 setResult((prevResult)=>({
                     ...prevResult, 
-                    articles:[...prevResult.articles, ...res.articles],     
+                    articles:[...prevResult.articles, ...res?.articles],     
                     totalResults: res.totalResults,
                 }));    
             })
+        }else{
+            setHasMore(false);
+        }
         if(result?.articles?.length>=result.totalResults){
             setHasMore(false);
         }

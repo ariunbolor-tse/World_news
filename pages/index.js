@@ -3,8 +3,6 @@ import Highlight from "../components/highlight";
 import { getCategory, getEverything} from "../lib/articles";
 import Search from "../components/search";
 import { getFiltered } from "../lib/articles";
-import BannerSkeleton from "../components/skeletons/banner_skeleton";
-import HighlightSkeleton from "../components/skeletons/highlight_skeleton";
 
 export async function getServerSideProps(){
   const data = await getEverything()

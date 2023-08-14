@@ -1,4 +1,4 @@
-import world from '../public/worldwide.png';
+import world from '../public/logo.svg'
 import search from '../public/search-interface-symbol.png'
 import Image from 'next/image';
 import Link from 'next/link';

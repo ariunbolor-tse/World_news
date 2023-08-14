@@ -1,5 +1,5 @@
 import Gallery from "./gallery";
-import arrow from '../public/up-arrow.png'
+import arrow from '../public/arrow.svg'
 import Image from "next/image";
 import formatDate from "../utils/format_date";
 import Link from 'next/link';
@@ -23,9 +23,9 @@ const Highlight = ({articles, section}) => {
                 <Link href={`${section}`}>
                 <div className="flex items-center">
                     <div className="text-sm font-bold text-black">Read All</div>
-                    <div className="h-4 w-8">
+                    <div className="h-6 w-8">
                     <Image 
-                        className='rotate-90 object-contain h-full w-full' 
+                        className=' object-contain h-full w-full' 
                         src={arrow} 
                         alt='--->' 
                         height='20'
