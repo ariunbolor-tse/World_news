@@ -11,6 +11,10 @@ const Header = ({onSearch, onCategoryChange, onCountryChange}) => {
 
     const searchArticle = () => {
         setActivate(!activate)
+        setSearchQuery('')
+        onSearch('')
+        onCategoryChange('')
+        onCountryChange('')
     }
 
     const handleInputChange = (event) =>{
